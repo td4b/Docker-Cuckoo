@@ -20,7 +20,7 @@ RUN \
    git clone https://github.com/volatilityfoundation/volatility && \
    cd volatility && python setup.py install && \
    adduser cuckoo && usermod -a -G vboxusers cuckoo && usermod -a -G libvirtd cuckoo && \
-   pip install -U pip setuptools && pip install -U cuckoo && \
+   pip install -U pip setuptools && pip install -U cuckoo 
    
 # Skip launching services for now.
 cmd ["bin/bash"]
