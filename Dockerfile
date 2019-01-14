@@ -4,9 +4,9 @@ FROM ubuntu:14.04
 RUN \
    apt-get update && \
    apt-get -y upgrade && \
-   apt-get -y install python python-pip python-dev libffi-dev libssl-dev git \
-   python-virtualenv python-setuptools libjpeg-dev zlib1g-dev swig mongodb libcap2-bin \
-   postgresql libpq-dev qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils python-libvirt && \
+   apt-get -y install python python-pip python-dev libffi-dev libssl-dev git libguac-client-rdp0 guacd \
+   python-virtualenv python-setuptools libjpeg-dev zlib1g-dev swig mongodb libcap2-bin libguac-client-vnc0 \
+   postgresql libpq-dev qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils python-libvirt libguac-client-ssh0 && \
    echo deb http://download.virtualbox.org/virtualbox/debian xenial contrib | sudo tee -a /etc/apt/sources.list.d/virtualbox.list && \
    wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - && \
    apt-get update && \
