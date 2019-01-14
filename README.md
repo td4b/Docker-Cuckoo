@@ -9,4 +9,4 @@ Just Pull and Run the image via Docker like so:
 docker pull tdub17/docker-cuckoo:latest
 ```
 
-Then run the image! More Directions to Follow shortly.
+More Directions to Follow shortly.
