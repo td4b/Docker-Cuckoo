@@ -4,7 +4,7 @@ FROM ubuntu:14.04
 RUN \
    apt-get update && \
    apt-get -y upgrade && \
-   apt-get -y install python python-pip python-dev libffi-dev libssl-dev \
+   apt-get -y install python python-pip python-dev libffi-dev libssl-dev git \
    python-virtualenv python-setuptools libjpeg-dev zlib1g-dev swig mongodb libcap2-bin \
    postgresql libpq-dev qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils python-libvirt && \
    echo deb http://download.virtualbox.org/virtualbox/debian xenial contrib | sudo tee -a /etc/apt/sources.list.d/virtualbox.list && \
@@ -15,7 +15,9 @@ RUN \
    groupadd pcap && \
    usermod -a -G pcap cuckoo && \
    chgrp pcap /usr/sbin/tcpdump && \
-   setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
+   setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump && \
+   git clone https://github.com/volatilityfoundation/volatility && \
+   cd volatility && python setup.py install 
    
    
 # Skip launching services for now.
